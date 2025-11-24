@@ -63,6 +63,28 @@ const App = () => {
           />
         </svg>
       </div>
+      {showcontent && 
+      <div className='main w-full'>
+        <div className='landing w-full h-screen bg-black'>
+          <div className="navbar w-full py-3 px-8 absolute top-0 left-0 z-[10] ">
+             <div className="logo flex gap-4  items-center">
+              <div className="lines flex gap-[3px] flex-col ">
+                <div className="line w-8 h-1 bg-white"></div>
+                <div className="line w-6 h-1 bg-white"></div>
+                <div className="line w-4 h-1 bg-white"></div>
+              </div>
+              <h3 className='text-2xl text-white font-bold mt-[-6px] leading-none'>Rockstar</h3>
+             </div>
+          </div>
+          <div className="imagesdiv w-full h-screen relative overflow-hidden">
+            <img src=".\sky.png" alt="sky-bg" className='absolute top-0 left-0 w-full h-full object-cover' />
+            <img src=".\bg (1).png" alt="background" className='absolute top-0 left-0 w-full h-full object-cover'/>
+            <img src="public\girlbg.png" alt="background" className=' character h-[400px]
+            absolute -bottom-[25%] left-1/2 -translate-x-1/2 scale-[1.4]'/>
+          </div>
+        </div>
+      </div>
+      }
     </>
   )
 }
