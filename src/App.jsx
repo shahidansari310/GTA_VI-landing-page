@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from "gsap"
 
 const App = () => {
+
+  const [showcontent,setShowcontent]=useState(false);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -23,6 +25,8 @@ const App = () => {
         onUpdate:function(){
           if(this.progress()>= .9){
             document.querySelector(".svg").remove();
+            setShowcontent(true);
+            this.kill();
           }
         }
       })
