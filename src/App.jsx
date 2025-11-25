@@ -34,6 +34,25 @@ const App = () => {
       })
   })
 
+  useGSAP(()=>{
+    const main=document.querySelector(".main");
+
+    main?.addEventListener("mousemove",function(e){
+      // console.log(e.clientX,e.clientY);
+
+      const xMove=(e.clientX /window.innerWidth -.5)*40 ;
+      gsap.to(".imagesdiv .text",{
+        x:`${xMove*.4}%`
+      })
+      gsap.to(".sky ",{
+        x: xMove
+      })
+      gsap.to(".bg ",{
+        x: xMove*1.7
+      })
+    })
+  },[showcontent]);
+
   return (
     <>
       <div className="svg flex items-center justify-center fixed top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-[#000]">
@@ -80,15 +99,15 @@ const App = () => {
           </div>
           
           <div className="imagesdiv w-full h-screen relative overflow-hidden">
-            <img src=".\sky.png" alt="sky-bg" className='absolute top-0 left-0 w-full h-full object-cover' />
-            <img src=".\bg (1).png" alt="background" className='absolute top-0 left-0 w-full h-full object-cover'/>
+            <img src=".\sky.png" alt="sky-bg" className='absolute sky top-0 left-0 w-full h-full object-cover scale-[1.2]' />
+            <img src=".\bg (1).png" alt="background" className='absolute bg top-0 left-0 w-full h-full object-cover scale-[1.1]'/>
 
-            <div className="text absolute top-0 left-1/2 -translate-x-1/2 flex flex-col gap-2 mt-3">
-            <h1 className='text-white text-9xl -ml-18 leading-none'>grand</h1>
-            <h1 className='text-white text-9xl ml-18 leading-none'>theft</h1>
-            <h1 className='text-white text-9xl -ml-18 leading-none'>auto</h1>
+            <div className="text absolute top-0 left-1/2 -translate-x-1/2 flex flex-col gap-2 mt-7">
+            <h1 className='text-white text-8xl -ml-18 leading-none'>grand</h1>
+            <h1 className='text-white text-8xl ml-18 leading-none'>theft</h1>
+            <h1 className='text-white text-8xl -ml-18 leading-none'>auto</h1>
           </div>
-            <img src="/girlbg.png" alt="background" className=' character h-[400px]
+            <img src="/girlbg.png" alt="background" className=' character h-[420px]
             absolute -bottom-[25%] left-1/2 -translate-x-1/2 scale-[1.4]'/>
             
           </div>
@@ -99,6 +118,23 @@ const App = () => {
             </div>
             <img className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[40px]' src="./ps5.png" alt="" />
           </div>
+        </div>
+        <div className='w-full py-20 bg-black flex items-center justify-center'>
+          <div className="cntr w-full p-10 flex text-white">
+            <div className="lg relative w-1/2 flex items-center justify-center">
+            <img className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[1.3]"
+            src="./imag.png" alt="" />
+          </div>
+            <div className="rg w-[40%]">
+              <h1 className='text-6xl'>Still Running</h1>
+              <h1 className='text-6xl'>Not Hunting</h1>
+              <p className='mt-10 text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit laudantium in cumque necessitatibus. Officiis neque pariatur fugiat, voluptas eius modi!</p>
+              <p className='mt-3 text-xl'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro veritatis sapiente voluptatem nesciunt!</p>
+              <button className='bg-yellow-500 py-10 px-5 text-2xl text-black mt-10'>Download Now</button>
+            </div>
+
+          </div>
+          
         </div>
       </div>
       }
